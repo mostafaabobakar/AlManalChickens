@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AlManalChickens.Services</name>
+    </assembly>
+    <members>
+        <member name="P:AlManalChickens.Services.DTO.AppClientDTO.ContactUsClientDto.ContactUsClientAddDto.email">
+            <summary>
+            email or phone
+            </summary>
+        </member>
+        <member name="P:AlManalChickens.Services.DTO.AppProviderDTO.ContactUsProviderDto.ContactUsProviderAddDto.email">
+            <summary>
+            email or phone
+            </summary>   
+        </member>
+        <member name="P:AlManalChickens.Services.DTO.UserDto.UserInfoAddDTO.projectName">
+            <summary>
+            for title of notification
+            </summary>
+        </member>
+        <member name="P:AlManalChickens.Services.DTO.UserDto.UserInfoAddDTO.lang">
+             <summary>
+            ar or en
+             </summary>
+        </member>
+    </members>
+</doc>

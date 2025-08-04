@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AlManalChickens</name>
+    </assembly>
+    <members>
+        <member name="M:AlManalChickens.Controllers.Api.MoreController.AboutUs">
+            <summary>
+            AboutUs  عن التطبيق
+            </summary>
+            <remarks>
+            Sample response:
+            
+                {
+                  "AboutApplication" : "عن التطبيق",
+                 }
+                
+            </remarks>
+            <param lang="ar">ar or en</param>
+            <returns>Return String </returns>
+            <response code="200">Sucess</response>
+            <response code="400">BadRequest Or Exption</response>
+            <response code="500">internal server error</response>
+        </member>
+        <member name="M:AlManalChickens.Controllers.Api.MoreController.CommonQuestions">
+            <summary>
+            CommonQuestions  الأسئلة الشائعة  
+            </summary>
+            <remarks>
+            Sample response:
+            
+                {
+                  "Question" : "Question",
+                  "Answer" : "Answer",
+                 }
+                
+            </remarks>
+            <param lang="ar">ar or en</param>
+            <returns>Return Object Of Points</returns>
+            <response code="200">Sucess</response>
+            <response code="400">BadRequest Or Exption</response>
+            <response code="500">internal server error</response>
+        </member>
+        <member name="M:AlManalChickens.Controllers.Api.MoreController.ContactWithUs(AlManalChickens.Services.DTO.More.ContactWithUsDto)">
+            <summary>
+            ContactWithUs  تواصل معنا  
+            </summary>
+            <remarks>
+            </remarks>
+            <param lang="ar">ar or en</param>
+            <returns>Return Object Of Points</returns>
+            <response code="200">Sucess</response>
+            <response code="400">BadRequest Or Exption</response>
+            <response code="500">internal server error</response>
+        </member>
+        <member name="M:AlManalChickens.Controllers.Shared.Back_UpController.DownloadFile(System.String,System.String)">
+            [HttpGet]
+        </member>
+    </members>
+</doc>

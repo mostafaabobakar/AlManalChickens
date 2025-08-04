@@ -1,0 +1,66 @@
+﻿@page
+@model EditUserModel
+@using AlManalChickens.Domain.Entities.UserTables;
+@{
+    ViewData["Title"] = "تعديل بيانات المستخدم";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var user =await UserManager.GetUserAsync(User);
+    var userId = user.Id;
+    //var user = await UserManager.FindByIdAsync(userId);
+}
+
+
+<div class="card-box">
+    <h2 class="header-title m-t-0 m-b-30">@ViewData["Title"]</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            @*asp-route-returnUrl="@Model.ReturnUrl"*@
+            <form enctype="multipart/form-data" method="post">
+                 
+
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <input type="hidden" asp-for="Input.Id" value="@userId" />
+                <div class="form-group">
+                    <label asp-for="Input.Email">البربد الالكتروني</label>
+                    <input asp-for="Input.Email" value="@user.Email" class="form-control" />
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                @*<div class="form-group">
+                <label asp-for="Input.FullName">اسم المستخدم</label>
+                <input asp-for="Input.FullName" class="form-control" />
+                <span asp-validation-for="Input.FullName" class="text-danger"></span>
+            </div>*@
+                <div class="form-group">
+                    <label>تعديل كلمة المرور</label>
+                    <a href="~/Identity/Account/Manage/ChangePassword" class="btn-new-style btn-rounded w-100">تعديل كلمة المرور</a>
+                </div>
+                @if (user.ProfilePicture != null)
+                {
+
+                    <div class="form-group">
+                        <label asp-for="Input.PhotoPath">الصورة القديمة</label>
+                        <img src="~/@user.ProfilePicture" width="100px" height="100px" style="display: block" />
+                        <span asp-validation-for="Input.PhotoPath" class="text-danger"></span>
+                    </div>
+
+                }
+                <div class="form-group">
+                    <label asp-for="Input.Img">صورة جديدة</label>
+                    <input asp-for="Input.Img" class="form-control" />
+                    <span asp-validation-for="Input.Img" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn-new-style btn-rounded">حفظ</button>
+            </form>
+            <a asp-action="Index" asp-controller="Home" class="btn-black">العودة الى الرئيسية</a>
+
+        </div>
+   
+    </div>
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

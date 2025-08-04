@@ -1,0 +1,173 @@
+﻿@model AlManalChickens.Domain.ViewModel.Settings.SettingEditViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card-box">
+    <h2 class="header-title m-t-0 m-b-30" style="text-align:center">تعديل</h2>
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-6">
+
+            <form enctype="multipart/form-data" asp-action="Edit" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <input type="hidden" asp-for="Lat" />
+                <input type="hidden" asp-for="Lng" />
+                <input type="hidden" asp-for="Address" />
+                <div class="form-group">
+                    <label asp-for="Phone" class="control-label">الهاتف</label>
+                    <textarea asp-for="Phone" class="form-control"></textarea>
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label">البريد الالكتروني</label>
+                    <textarea asp-for="Email" class="form-control"></textarea>
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CondtionsArClient" class="control-label">الشروط والاحكام للعميل بالعربية</label>
+                    <textarea asp-for="CondtionsArClient" class="form-control"></textarea>
+                    <span asp-validation-for="CondtionsArClient" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CondtionsEnClient" class="control-label">الشروط والاحكام للعميل بالانجليزية</label>
+                    <textarea asp-for="CondtionsEnClient" class="form-control"></textarea>
+                    <span asp-validation-for="CondtionsEnClient" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="CondtionsArDelegt" class="control-label">الشروط والاحكام لمقدم الخدمة بالعربية</label>
+                    <textarea asp-for="CondtionsArDelegt" class="form-control"></textarea>
+                    <span asp-validation-for="CondtionsArDelegt" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CondtionsEnDelegt" class="control-label">الشروط والاحكام لمقدم الخدمة بالانجليزية</label>
+                    <textarea asp-for="CondtionsEnDelegt" class="form-control"></textarea>
+                    <span asp-validation-for="CondtionsEnDelegt" class="text-danger"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label asp-for="AboutUsArClient" class="control-label">من نحن للعميل بالعربية</label>
+                    <textarea asp-for="AboutUsArClient" class="form-control"></textarea>
+                    <span asp-validation-for="AboutUsArClient" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="AboutUsEnClient" class="control-label">من نحن للعميل بالانجليزية</label>
+                    <textarea asp-for="AboutUsEnClient" class="form-control"></textarea>
+                    <span asp-validation-for="AboutUsEnClient" class="text-danger"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label asp-for="AboutUsArDelegt" class="control-label">من نحن لمقدم الخدمة بالعربية</label>
+                    <textarea asp-for="AboutUsArDelegt" class="form-control"></textarea>
+                    <span asp-validation-for="AboutUsArDelegt" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="AboutUsEnDelegt" class="control-label">من نحن لمقدم الخدمة بالانجليزية</label>
+                    <textarea asp-for="AboutUsEnDelegt" class="form-control"></textarea>
+                    <span asp-validation-for="AboutUsEnDelegt" class="text-danger"></span>
+                </div>
+
+
+
+                <div class="form-group">
+                    <label asp-for="SenderName" class="control-label">اسم المرسل للرسائل (SenderName)</label>
+                    <textarea asp-for="SenderName" class="form-control"></textarea>
+                    <span asp-validation-for="SenderName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="UserNameSms" class="control-label">اسم المستخدم للرسائل (UserNameSms)</label>
+                    <textarea asp-for="UserNameSms" class="form-control"></textarea>
+                    <span asp-validation-for="UserNameSms" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PasswordSms" class="control-label">كلمة المرور للسرائل (PasswordSms)</label>
+                    <textarea asp-for="PasswordSms" class="form-control"></textarea>
+                    <span asp-validation-for="PasswordSms" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ApplicationId" class="control-label">رقم التطبيق (ApplicationId)</label>
+                    <textarea asp-for="ApplicationId" class="form-control"></textarea>
+                    <span asp-validation-for="ApplicationId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SenderId" class="control-label">رقم المرسل (SenderId)</label>
+                    <textarea asp-for="SenderId" class="form-control"></textarea>
+                    <span asp-validation-for="SenderId" class="text-danger"></span>
+                </div>
+
+@*                <div class="form-group">
+                    <label asp-for="Address" class="control-label"> الموقع</label>
+                    <div class="form-group">
+                        <input asp-for="Address" class="form-control" />
+                    </div>
+                    <div id="map" style="width:100%; height:400px"></div>
+                </div>
+*@
+
+                <div class="form-group">
+                    <input type="submit" value="حفظ" class="btn-new-style btn-rounded" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+@*    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNm7VC4eQsCZcny5cVteIkg_SMJpc2G7Y&callback=initMap&language=ar"></script>
+    <script src="~/js/locationpicker.jquery.js"></script>
+
+    <script>
+        $( document ).ready(function() {
+                    var latlng = new google.maps.LatLng(@Model.Lat, @Model.Lng);
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                        center: latlng,
+                        zoom: 11,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP,
+                        disableDefaultUI: true,
+                        animation: google.maps.Animation.DROP,
+                    });
+                    var marker = new google.maps.Marker({
+                        position: latlng,
+                        map: map,
+                        draggable: true
+                    });
+                    $('#map').locationpicker({
+                    location: {
+                        latitude: @Model.Lat,
+                        longitude: @Model.Lng
+                    },
+                    //locationName: "",
+                    radius: 50,
+                    zoom: 15,
+                    inputBinding: {
+                        latitudeInput: $("#Lat"),
+                        longitudeInput: $("#Lng"),
+                        locationNameInput: $('#Address'),
+                    },
+                     enableAutocomplete: true
+                });
+
+
+                google.maps.event.addListener(marker, 'dragend', function (event) {
+                   var  x = this.getPosition().lat();
+                   var  y = this.getPosition().lng();
+                   
+                });
+                });
+
+    </script>
+*@}

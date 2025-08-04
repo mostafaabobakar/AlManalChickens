@@ -1,0 +1,248 @@
+[
+  {
+    "key": "Success",
+    "valueAr": "تم",
+    "valueEn": "Success"
+  },
+  {
+    "key": "UserCreationError",
+    "valueAr": "خطا اثناء اضافة المستخدم",
+    "valueEn": "An Error Occurred During User Creation"
+  },
+  {
+    "key": "UserRoleAssigningError",
+    "valueAr": "خطأ في اسناد الصلاحية",
+    "valueEn": "Error In Assigning Role"
+  },
+  {
+    "key": "DeviceAddingError",
+    "valueAr": "خطأ في اضافة الجهاز",
+    "valueEn": "Error In Adding Device"
+  },
+  {
+    "key": "UserCreatedSuccessfully",
+    "valueAr": "تم إنشاء المستخدم بنجاح",
+    "valueEn": "User Created Successfully"
+  },
+  {
+    "key": "Error",
+    "valueAr": "خطأ",
+    "valueEn": "Error"
+  },
+  {
+    "key": "CodeSentSuccessfully",
+    "valueAr": "تم ارسال الكود بنجاح",
+    "valueEn": "Code Sent Successfully"
+  },
+  {
+    "key": "InvalidCategoryType",
+    "valueAr": "قسم خاطئ",
+    "valueEn": "Invalid category type"
+  },
+  {
+    "key": "InternalServerErrorOccured",
+    "valueAr": "حدث خطأ داخلى",
+    "valueEn": "Internal Server Error"
+  },
+  {
+    "key": "BadRequest",
+    "valueAr": "خطأ فى الطلب المرسل",
+    "valueEn": "Bad Request"
+  },
+  {
+    "key": "Unauthorized",
+    "valueAr": "غير مسموح لك بالدخول",
+    "valueEn": "Not Authorized"
+  },
+  {
+    "key": "Forbidden",
+    "valueAr": "أنت لاتمتلك صلاحية لهذا الإجراء",
+    "valueEn": "You Don't Have Permission To This Action"
+  },
+  {
+    "key": "UnexpectedFailurePLeaseTryAgainLater",
+    "valueAr": "خطأ غير متوقع الرجاء المحاولة لاحقاً",
+    "valueEn": "Unexpected Failure PLease Try Again Later"
+  },
+  {
+    "key": "UserNotFound",
+    "valueAr": "المستخدم غير موجود",
+    "valueEn": "User Not Found"
+  },
+  {
+    "key": "UserIsNotActive",
+    "valueAr": "المستخدم محظور من الدخول للنظام برجاء مراجعة الادارة",
+    "valueEn": "User Is Blocked Please check with the administration "
+  },
+  {
+    "key": "ItemNotExist",
+    "valueAr": "العنصر غير موجود",
+    "valueEn": "Item Not Exist"
+  },
+  {
+    "key": "PleaseProvideTheRequiredParameters",
+    "valueAr": "الرجاء ادخال العناصر المطلوبة",
+    "valueEn": "Please Provide The Required Parameters"
+  },
+  {
+    "key": "UserRegisteredSuccessfully",
+    "valueAr": "تم إنشاء حساب المستخدم بنجاح، من فضلك قم بتفعيل الحساب عن طريق ادخال الرقم المتغير المرسل إليك.",
+    "valueEn": "User Registered Successfully, Please verify The Account By Entering OTP Sended To Your Email."
+  },
+  {
+    "key": "PasswordIsNotCorrect",
+    "valueAr": " كلمة المرور غير صحيحة، الرجاء المحاولة مرة أخرى",
+    "valueEn": "The Password Is Incorrect, Please Try Again"
+  },
+  {
+    "key": "TheCurrentPasswordIsIncorrectPleaseTryAgain",
+    "valueAr": " كلمة المرور الحالية غير صحيحة، الرجاء المحاولة مرة أخرى",
+    "valueEn": "The Current Password Is Incorrect, Please Try Again"
+  },
+  {
+    "key": "ThePhoneIsIncorrectPleaseTryAgain",
+    "valueAr": "رقم الهاتف غير صحيح الرجاء المحاولة مرة أخرى",
+    "valueEn": "The Phone Is Incorrect, Please Try Again"
+  },
+  {
+    "key": "UserActivatedSuccessfully",
+    "valueAr": "تم تفعيل المستخدم بنجاح",
+    "valueEn": "User Activated Successfully"
+  },
+  {
+    "key": "OtpSendPleaseCheckYourVerificationMethod",
+    "valueAr": "تم ارسال رمز التفعيل الى وسيلة التحقق المختارة",
+    "valueEn": "Otp Send To Your Selected Verification Method"
+  },
+  {
+    "key": "NotificationSendSuccesfullyToVerificationMethod",
+    "valueAr": "تم اعادة ارسال رمز التفعيل الى وسيلة التحقق المختارة",
+    "valueEn": "Otp Resent To Your Selected Verification Method"
+  },
+  {
+    "key": "ErrorChangingPassword",
+    "valueAr": "خطأ فى تغيير كلمة المرور",
+    "valueEn": "Error Changing Password"
+  },
+  {
+    "key": "PasswordResetedSuccessfully",
+    "valueAr": "تم إعادة تعيين كلمة السر بنجاح",
+    "valueEn": "Password Reseted Successfully"
+  },
+  {
+    "key": "UserIsAlreadyActivated",
+    "valueAr": "المستخدم مفعل بالفعل",
+    "valueEn": "User Is Already Activated"
+  },
+  {
+    "key": "ActivationCodeIsNotValidOrExpired",
+    "valueAr": "رمز التحقق غير صحيح أو منتهى",
+    "valueEn": "Activation Code Is Not Valid Or Expired"
+  },
+  {
+    "key": "ThisEmailIsAlreadyExists",
+    "valueAr": "البريد الإلكترونى مستخدم من قبل",
+    "valueEn": "This email is already registered before"
+  },
+  {
+    "key": "ThisMobileAlreadyExists",
+    "valueAr": "رقم الهاتف مستخدم من قبل",
+    "valueEn": "This phone number is already registered before"
+  },
+  {
+    "key": "ItemIsAlreadyExist",
+    "valueAr": "العنصر موجود بالفعل",
+    "valueEn": "Item Is Already Exists"
+  },
+  {
+    "key": "DeviceNotFound",
+    "valueAr": "الجهاز غير موجود",
+    "valueEn": "Device Not Found"
+  },
+  {
+    "key": "LoggedOutSuccessfully",
+    "valueAr": "تم تسجيل الخروج بنجاح",
+    "valueEn": "Logged Out Successfully"
+  },
+  {
+    "key": "AccountWasRemovedSuccessfully",
+    "valueAr": "تم حذف الحساب بنجاح",
+    "valueEn": "Your account has been removed successfully"
+  },
+  // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  {
+    "key": "ItemCreatedSuccessfully",
+    "valueAr": "تم الإضافه بنجاح",
+    "valueEn": "Item Created Successfully"
+  },
+  {
+    "key": "ItemUpdatedSuccessfully",
+    "valueAr": "تم التعديل بنجاح",
+    "valueEn": "Item Updated Successfully"
+  },
+  {
+    "key": "LoggedInSuccessfully",
+    "valueAr": "تم تسجيل الدخول بنجاح",
+    "valueEn": "Logged in Successfully"
+  },
+  {
+    "key": "NameIsRepeated",
+    "valueAr": "الإسم مكرر",
+    "valueEn": "Name Is Repeated"
+  },
+  {
+    "key": "OnlyArabicCharactersAllowed",
+    "valueAr": "مسموح فقط بالحروف العربية",
+    "valueEn": "Only Arabic Characters Allowed"
+  },
+  {
+    "key": "NotMeaningfulArabicName",
+    "valueAr": "اسم عربي غير ذي معنى",
+    "valueEn": "Not Meaningful Arabic Name"
+  },
+  {
+    "key": "Can'tRegister",
+    "valueAr": "لا يمكن التسجيل",
+    "valueEn": "Can't Register"
+  },
+  {
+    "key": "UserVerifiedSuccessfully",
+    "valueAr": "تم التحقق من المستخدم بنجاح",
+    "valueEn": "User Verified Successfully"
+  },
+  {
+    "key": "CommercialNoAlreadyExists",
+    "valueAr": "رقم السجل التجاري مسجل لدينا بالفعل",
+    "valueEn": "Commercial number already exists"
+  },
+  {
+    "key": "ThisPhoneAlreadyExists",
+    "valueAr": "رقم الجوال مسجل من قبل",
+    "valueEn": "This phone number is already registerd before"
+  },
+  {
+    "key": "ThisIdentityNumberAlreadyExists",
+    "valueAr": "رقم الهوية الوطنية مسجل من قبل",
+    "valueEn": "This identity number is already registerd before"
+  },
+  {
+    "key": "UserAlreadyActivated",
+    "valueAr": "رقم الجوال تم تفعيله مسبقا",
+    "valueEn": "Phone number is already activated before"
+  },
+  {
+    "key": "OTPIsValid",
+    "valueAr": "تم التحقق من كود التفعيل بنجاح",
+    "valueEn": "The activation code has been verified successfully"
+  },
+  {
+    "key": "ChooseAtLeastOneCity",
+    "valueAr": "يجب اختيار مدينه واحده على الاقل",
+    "valueEn": "You must choose at least one city"
+  },
+  {
+    "key": "OneOrMoreCityNotValid",
+    "valueAr": "يوجد مدينه او اكثر غير صحيحه",
+    "valueEn": "Three is one or more city not valid"
+  }
+]
