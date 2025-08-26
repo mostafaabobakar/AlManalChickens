@@ -9,5 +9,6 @@ namespace AlManalChickens.Services.DashBoard.Contract.SliderInterfaces
         Task<EditSliderViewModel> GetSliderDetails(int? Id);
         Task<bool> EditSlider(EditSliderViewModel slider);
         Task<bool> ChangeState(int? id);
+        Task<bool> Delete(int? id);
     }
 }

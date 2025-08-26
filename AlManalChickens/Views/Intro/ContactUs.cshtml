@@ -1,0 +1,132 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutWebsite.cshtml";
+}
+<div class="paner_">
+    <img src="~/Website/imgs/paner7.jpg">
+    <div class="d-flex flex-column gap-3 justify-content-center align-items-center">
+        <h1 class="m-0 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">تواصل معنا</h1>
+    </div>
+</div>
+
+<div class="sec-marg">
+    <div class="container">
+        <div>
+
+            <div class="allIteminfo_call px-3 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">
+                <div class="row">
+                    <div class="col-md-4 p-0">
+                        <div class="iteminfo_call">
+                            <img src="~/Website/imgs/email.png">
+                            <h5 class="main-color mb-3">البريد الآلكتروني</h5>
+                            <div>
+                                <aside>osmanobeh@gmail.com</aside>
+                                <aside>test@gmail.com</aside>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 p-0">
+                        <div class="iteminfo_call">
+                            <img src="~/Website/imgs/location.png">
+                            <h5 class="main-color mb-3">الموقع</h5>
+                            <div>
+                                <aside> السلي , الرياض , السعودية </aside>
+                                <aside>شارع ابن العميد</aside>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 p-0">
+                        <div class="iteminfo_call">
+                            <img src="~/Website/imgs/phone.png">
+                            <h5 class="main-color mb-3">رقم الجوال</h5>
+                            <div>
+                                <aside>+015559777744(20)</aside>
+                                <aside>+015559777744(20)</aside>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-5 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div>
+                        <h3 class="f-b main-color mb-3 text-center wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s ">إملأ النموذج</h3>
+                        <form class="form-content m-0 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">
+                            <div class="form-group">
+                                <label class="text-center d-block">النوع</label>
+                                <div class="Types_Complaint d-flex justify-content-center align-items-center gap-2">
+                                    <div>
+                                        <input type="radio" name="type_" value="Complaint">
+                                        <aside>شكوى</aside>
+                                        <span></span>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="type_" value="Suggestion">
+                                        <aside>اقتراح</aside>
+                                        <span></span>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="type_" value="Investigation">
+                                        <aside>تحقيق</aside>
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>الاسم</label>
+                                        <input type="text" class="form-control" placeholder="الاسم الكامل">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>البريد الإلكتروني</label>
+                                        <input type="email" class="form-control" placeholder="برجاء إدخال البريد الإلكتروني">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>الجنس</label>
+                                        <select class="form-control select_2">
+                                            <option selected disabled hidden>برجاء اختيار الجنس</option>
+                                            <option>ذكر</option>
+                                            <option>انثى</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>المنطقة</label>
+                                        <input type="text" class="form-control" placeholder="برجاء إدخال المنطقة">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>رقم الجوال</label>
+                                        <input type="text" class="form-control" placeholder="برجاء إدخال رقم الجوال">
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>رسالة</label>
+                                        <textarea class="form-control" placeholder="برجاء إدخال الرسالة"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-main btn-main-w w-100">إرسال</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="map wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126908.123456789!2d46.67500000000001!3d24.713551999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c5e8a9b9b9b9b9%3A0x123456789abcdef0!2z2YXRhZ2F0aW9uIE1hbmFs!5e0!3m2!1sen!2ssa!4v1616161616161" width="100%" height="653" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

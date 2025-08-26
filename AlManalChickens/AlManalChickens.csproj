@@ -13,6 +13,12 @@
     <NoWarn>1701;1702;1591</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="wwwroot\Websit\**" />
+    <Content Remove="wwwroot\Websit\**" />
+    <EmbeddedResource Remove="wwwroot\Websit\**" />
+    <None Remove="wwwroot\Websit\**" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="ExcelDataReader" Version="3.6.0" />
     <PackageReference Include="ExcelDataReader.DataSet" Version="3.6.0" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.6" />
@@ -27,7 +33,6 @@
     <ProjectReference Include="..\AlManalChickens.Infrastructure\AlManalChickens.Infrastructure.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controllers\Website\" />
     <Folder Include="Resources\Views\" />
     <Folder Include="wwwroot\pdf\" />
   </ItemGroup>

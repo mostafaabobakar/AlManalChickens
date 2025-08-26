@@ -23,23 +23,25 @@ namespace AlManalChickens.Services.DashBoard.Implementation.SliderImplementaion
 
         public async Task<List<SliderViewModel>> GetAllSliders()
         {
-            var Sliders = await _context.Sliders.Select(s => new SliderViewModel
-            {
-                Id = s.Id,
-                SliderName = s.SliderName,
-                Url = s.Url,
-                Image = DefaultPath.DomainUrl + s.Image,
-                IsActive = s.IsActive,
-                CreationDate = s.CreationDate.ToString("dd-MM-yyyy"),
-                ExpireDate = s.ExpireDate.ToString("dd-MM-yyyy"),
-            }).ToListAsync();
+            var Sliders = await _context.Sliders
+                .Where(c => c.IsActive && (c.ExpireDate != null ? c.ExpireDate.Value.Date > DateTime.Now.Date : true))
+                .Select(s => new SliderViewModel
+                {
+                    Id = s.Id,
+                    //SliderName = s.SliderName,
+                    Url = s.Url,
+                    Image = DefaultPath.DomainUrl + s.Image,
+                    IsActive = s.IsActive,
+                    CreationDate = s.CreationDate.ToString("dd-MM-yyyy"),
+                    ExpireDate = s.ExpireDate != null ? s.ExpireDate.Value.ToString("dd-MM-yyyy") : "",
+                }).ToListAsync();
             return Sliders;
         }
         public async Task<bool> CreateSlider(CreateSliderViewModel slider)
         {
             Slider NewSlider = new Slider
             {
-                SliderName = slider.SliderName,
+                //SliderName = slider.SliderName,
                 Url = slider.Url,
                 Image = slider.Image != null ? _uploadImage.Upload(slider.Image, (int)FileName.Slider) : "",
                 IsActive = true,
@@ -55,7 +57,7 @@ namespace AlManalChickens.Services.DashBoard.Implementation.SliderImplementaion
             return await _context.Sliders.Where(s => s.Id == Id).Select(s => new EditSliderViewModel
             {
                 Id = s.Id,
-                SliderName = s.SliderName,
+                //SliderName = s.SliderName,
                 Url = s.Url,
                 CurrentImage = DefaultPath.DomainUrl + s.Image,
                 ExpireDate = s.ExpireDate,
@@ -68,7 +70,7 @@ namespace AlManalChickens.Services.DashBoard.Implementation.SliderImplementaion
             {
                 var current = await _context.Sliders.FirstOrDefaultAsync(a => a.Id == slider.Id);
 
-                current.SliderName = slider.SliderName;
+                //current.SliderName = slider.SliderName;
                 current.Url = slider.Url;
                 current.Image = slider.NewImage != null ? _uploadImage.Upload(slider.NewImage, (int)FileName.Slider) : current.Image;
                 current.ExpireDate = slider.ExpireDate;
@@ -101,6 +103,17 @@ namespace AlManalChickens.Services.DashBoard.Implementation.SliderImplementaion
             Slider.IsActive = !Slider.IsActive;
             await _context.SaveChangesAsync();
             return Slider.IsActive;
+        }
+        public async Task<bool> Delete(int? id)
+        {
+            var deletedSlider = await _context.Sliders.FindAsync(id);
+            if (deletedSlider is not null)
+            {
+                _context.Sliders.Remove(deletedSlider);
+                await _context.SaveChangesAsync();
+                return true;
+            }
+            return false;
         }
     }
 }

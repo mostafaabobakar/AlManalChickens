@@ -332,6 +332,92 @@ namespace AlManalChickens.Persistence.Migrations
                     b.ToTable("CoponUsed");
                 });
 
+            modelBuilder.Entity("AlManalChickens.Domain.Entities.Logic.Category", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("NameAr")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NameEn")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("AlManalChickens.Domain.Entities.Logic.Product", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DescriptionAr")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DescriptionEn")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("DiscountPrice")
+                        .HasColumnType("float");
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("NameAr")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NameEn")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
+
+                    b.Property<double>("Weigth")
+                        .HasColumnType("float");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("Products");
+                });
+
             modelBuilder.Entity("AlManalChickens.Domain.Entities.SettingTables.ContactUs", b =>
                 {
                     b.Property<int>("Id")
@@ -605,7 +691,7 @@ namespace AlManalChickens.Persistence.Migrations
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("ExpireDate")
+                    b.Property<DateTime?>("ExpireDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Image")
@@ -615,12 +701,7 @@ namespace AlManalChickens.Persistence.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<string>("SliderName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Url")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -1066,6 +1147,17 @@ namespace AlManalChickens.Persistence.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("AlManalChickens.Domain.Entities.Logic.Product", b =>
+                {
+                    b.HasOne("AlManalChickens.Domain.Entities.Logic.Category", "Category")
+                        .WithMany("Products")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+                });
+
             modelBuilder.Entity("AlManalChickens.Domain.Entities.SettingTables.ContactUs", b =>
                 {
                     b.HasOne("AlManalChickens.Domain.Entities.UserTables.ApplicationDbUser", null)
@@ -1161,6 +1253,11 @@ namespace AlManalChickens.Persistence.Migrations
             modelBuilder.Entity("AlManalChickens.Domain.Entities.Copon.Copon", b =>
                 {
                     b.Navigation("CoponUseds");
+                });
+
+            modelBuilder.Entity("AlManalChickens.Domain.Entities.Logic.Category", b =>
+                {
+                    b.Navigation("Products");
                 });
 
             modelBuilder.Entity("AlManalChickens.Domain.Entities.UserTables.ApplicationDbUser", b =>

@@ -2,6 +2,7 @@
 using AlManalChickens.Domain.Entities.Chat;
 using AlManalChickens.Domain.Entities.Cities_Tables;
 using AlManalChickens.Domain.Entities.Copon;
+using AlManalChickens.Domain.Entities.Logic;
 using AlManalChickens.Domain.Entities.SettingTables;
 using AlManalChickens.Domain.Entities.UserTables;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -33,6 +34,8 @@ namespace AlManalChickens.Persistence
         public DbSet<Slider> Sliders { get; set; }
         public DbSet<City> Cities { get; set; }
         public DbSet<Region> Regions { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Product> Products { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

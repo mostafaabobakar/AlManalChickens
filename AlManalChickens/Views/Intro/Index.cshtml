@@ -1,0 +1,147 @@
+﻿@model IEnumerable<AlManalChickens.Domain.ViewModel.Slider.SliderViewModel>
+@{
+    Layout = "~/Views/Shared/_LayoutWebsite.cshtml";
+}
+<div class="po_R outer_carousel">
+    <div class="owl-carousel owl-theme owl-index">
+@*         <div class="item po_R">
+            <img src="~/Website/imgs/slider_1.jpg">
+        </div>
+        <div class="item po_R">
+            <img src="~/Website/imgs/slider_2.jpg">
+        </div>
+        <div class="item po_R">
+            <img src="~/Website/imgs/slider_3.jpg">
+        </div> *@
+        @foreach (var slider in Model)
+        {
+            <div class="item po_R">
+                <img src="@slider.Image">
+            </div>
+        }
+
+
+    </div>
+    <div class="group_icon wow zoomIn" data-wow-duration="2s" data-wow-delay="0.2s">
+        <img src="~/Website/imgs/icon_1.svg">
+        <img src="~/Website/imgs/icon_2.svg">
+        <img src="~/Website/imgs/icon_3.png">
+    </div>
+    <!-- <a href="#" class="btn-main">تسوق الان</a> -->
+</div>
+
+<div class="sec-marg">
+    <div class="container">
+        <div>
+            <div class="TheTitle_ text-center mb-3">
+                @* <h2 class="f-b main-color m-0 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">أشهى الوصفات المحضّرة يوميًا بمكونات طازجة</h2> *@
+                <h2 class="f-b main-color m-0 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">منتجات دجاج طازجة وعالية الجودة كل يوم</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <a href="wssfa-details.html" class="box-wasfa wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">
+                        <div class="img_">
+                            <img src="~/website/imgs/fullchicken.jpeg" />
+                        </div>
+                        <div class="p-3">دجاج كامل</div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <a href="wssfa-details.html" class="box-wasfa wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">
+                        <div class="img_">
+                            <img src="~/website/imgs/fealychicken.jpeg" />
+                        </div>
+                        <div class="p-3">فيليه دجاج</div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <a href="wssfa-details.html" class="box-wasfa wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">
+                        <div class="img_">
+                            <img src="~/website/imgs/liverchicken.jpeg" />
+                        </div>
+                        <div class="p-3">كبدة دجاج</div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <a href="wssfa-details.html" class="box-wasfa wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">
+                        <div class="img_">
+                            <img src="~/website/imgs/wingschicken.jpeg" />
+                        </div>
+                        <div class="p-3">أجنجه دجاج</div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <a href="wssfa-details.html" class="box-wasfa wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">
+                        <div class="img_">
+                            <img src="~/website/imgs/legschicken.jpeg" />
+                        </div>
+                        <div class="p-3">سيقان دجاج</div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <a href="wssfa-details.html" class="box-wasfa wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">
+                        <div class="img_">
+                            <img src="~/website/imgs/thighschicken.jpeg" />
+                        </div>
+                        <div class="p-3">أفخاد دجاج</div>
+                    </a>
+                </div>
+            </div>
+            <a href="wssfat.html" class="btn-main btn-main-w mb-0 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">المزيد من الوصفات</a>
+        </div>
+    </div>
+</div>
+
+<div class="sec-marg">
+    <div class="container">
+        <div class="row flex-wrap-reverse px-2">
+            <div class="col-lg-6 p-1">
+                <div class="All_item_statistics">
+                    <div class="item_statistics wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">
+                        <img src="~/Website/imgs/egss.svg">
+                        <div>
+                            <div class="Num_">1.000</div>
+                            <p>بيض يومياً</p>
+                        </div>
+                    </div>
+                    <div class="item_statistics wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">
+                        <img src="~/Website/imgs/checken.svg">
+                        <div>
+                            <div class="Num_">1.000.00</div>
+                            <p>دجاج في اليوم</p>
+                        </div>
+                    </div>
+                    @*                     <div class="item_statistics wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">
+                    <img src="~/Website/imgs/logoF.png">
+                    <div>
+                    <div class="Num_">10</div>
+                    <p>منتج</p>
+                    </div>
+                    </div> *@
+                    @*                     <div class="item_statistics wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">
+                    <div>
+                    <div class="Num_">5</div>
+                    <p>سنة من الخبرة</p>
+                    </div>
+                    </div> *@
+                </div>
+            </div>
+            <div class="col-lg-6 p-1">
+                <div class="info_statistics wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">
+                    <img src="~/Website/imgs/home1.jpg">
+                    <div>
+                        <div class="TheTitle_ text-center mb-5">
+                            <h2 class="f-b  m-0">تعرف علينا</h2>
+                        </div>
+                        <p class="text-center">
+                            منشأتنا تُعد من أهم المنشآت المتقدمة في المملكة العربية السعودية، وتقدم منتجات دواجن ومشتقات غذائية بجودة عاليه، لنقدم لك غذاءً صحيًا من مصدر موثوق.
+                        </p>
+                        <a asp-action="ContactUs" asp-controller="Intro" class="btn-main mb-0">إكتشف دجاج المنال</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -81,5 +81,11 @@ namespace AlManalChickens.Controllers.DashBoard
 
             return Json(new { key = 1, data = IsActive });
         }
+        public async Task<IActionResult> Delete(int? id)
+        {
+            bool isDeleted = await _sliderServices.Delete(id);
+
+            return Json(new { key = 1, data = isDeleted });
+        }
     }
 }
