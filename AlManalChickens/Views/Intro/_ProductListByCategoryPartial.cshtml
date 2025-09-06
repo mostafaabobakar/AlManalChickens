@@ -1,0 +1,13 @@
+﻿@model IEnumerable<AlManalChickens.Domain.ViewModel.Product.GetProductListViewModel>
+
+@foreach (var product in Model)
+{
+    <div class="col-lg-3 col-md-6">
+        <a class="box-product_ wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">
+            <div class="img_">
+                <img src="@product.Image" />
+            </div>
+            <div class="p-3">@product.NameAr</div>
+        </a>
+    </div>
+}

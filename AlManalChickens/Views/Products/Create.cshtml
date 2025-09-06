@@ -1,0 +1,93 @@
+﻿@model AlManalChickens.Domain.ViewModel.Product.CreateProductViewModel
+
+<div class="card-box">
+
+    <h2 class="header-title m-t-0 m-b-30">اضافة منتج جديد</h2>
+
+    <form asp-action="Create" method="post" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label asp-for="NameAr" class="control-label">الاسم بالعربية</label>
+                    <input asp-for="NameAr" class="form-control" />
+                    <span asp-validation-for="NameAr" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label asp-for="NameEn" class="control-label">الاسم بالانجليزيه</label>
+                    <input asp-for="NameEn" class="form-control" />
+                    <span asp-validation-for="NameEn" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label asp-for="Image" class="control-label">الصوره</label>
+                    <input asp-for="Image" class="form-control" />
+                    <span asp-validation-for="Image" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label asp-for="Price" class="control-label">السعر</label>
+                    <input asp-for="Price" class="form-control" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label asp-for="DiscountPrice" class="control-label">قيمة الخصم</label>
+                    <input asp-for="DiscountPrice" class="form-control" />
+                    <span asp-validation-for="DiscountPrice" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label asp-for="Weigth" class="control-label">الوزن</label>
+                    <input asp-for="Weigth" class="form-control" />
+                    <span asp-validation-for="Weigth" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label asp-for="DescriptionAr" class="control-label">الوصف بالعربيه</label>
+                    <input asp-for="DescriptionAr" class="form-control" />
+                    <span asp-validation-for="DescriptionAr" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label asp-for="DescriptionEn " class="control-label">الوصف بالانجليزيه</label>
+                    <input asp-for="DescriptionEn" class="form-control" />
+                    <span asp-validation-for="DescriptionEn" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label asp-for="CategoryId" class="control-label">القسم</label>
+                    <select 
+                        asp-for="CategoryId" 
+                        asp-items="@ViewBag.categoryLookup"
+                            class="form-control">
+                        <option value="0" selected="selected">من فضلك اختر قسم</option>
+                        </select>
+                    <span asp-validation-for="CategoryId" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <input type="submit" value="اضافة" class="btn-new-style btn-rounded" />
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div>
+                    <a asp-action="Index" class="btn-black">العودة للرئيسية</a>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+
+</div>

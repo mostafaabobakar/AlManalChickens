@@ -36,4 +36,10 @@
     <Folder Include="Resources\Views\" />
     <Folder Include="wwwroot\pdf\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Update="Views\Intro\_ProductListByCategoryPartial.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
 </Project>

@@ -10,8 +10,8 @@ namespace AlManalChickens.Domain.ViewModel.Slider
         //public string SliderName { get; set; }
         public string CurrentImage { get; set; }
         public IFormFile NewImage { get; set; }
-        [Required(ErrorMessage = "هذا الحقل مطلوب")]
-        public string Url { get; set; }
+        //[Required(ErrorMessage = "هذا الحقل مطلوب")]
+        public string? Url { get; set; }
         //[Required(ErrorMessage = "هذا الحقل مطلوب")]
         public DateTime? ExpireDate { get; set; }
     }

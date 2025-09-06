@@ -22,6 +22,7 @@
         Specification = 16,
         Copon = 17,
         Question = 17,
+        Products=18
     }
 
 }

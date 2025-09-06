@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<AlManalChickens.Domain.ViewModel.Product.GetProductListViewModel>
+@using AlManalChickens.Services.DTO.CategoryDto;
+@{
     Layout = "~/Views/Shared/_LayoutWebsite.cshtml";
 }
 <div class="sec-marg">
@@ -6,47 +8,52 @@
         <div>
 
             <div class="filter_Pro mb-4">
-                <button class="btn_" type="button">بيض المائدة</button>
+                @foreach (var category in (List<CategoryListDto>)ViewBag.listCategory)
+                {
+                    <button class="btn_" type="button" onclick='GetProductbyCategory("@category.Id")'>@category.NameAr</button>
+                }
+                @* <button class="btn_" type="button">بيض المائدة</button>
                 <button class="btn_" type="button">دجاج طازج و مجمد</button>
                 <button class="btn_" type="button">دجاج متبل</button>
                 <button class="btn_" type="button">مصنعات لحوم دجاج</button>
-                <button class="btn_" type="button">منتجات الدجاج الطازج</button>
+                <button class="btn_" type="button">منتجات الدجاج الطازج</button> *@
             </div>
 
-            <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <a href="store.html" class="box-product_ wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">
-                        <div class="img_">
-                            <img src="~/website/imgs/prod_1.png" />
-                        </div>
-                        <div class="p-3">أجزاء دجاج متبلة</div>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <a href="store.html" class="box-product_ wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">
-                        <div class="img_">
-                            <img src="~/website/imgs/prod_2.png" />
-                        </div>
-                        <div class="p-3">أجزاء دجاج متبلة حار</div>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <a href="store.html" class="box-product_ wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">
-                        <div class="img_">
-                            <img src="~/website/imgs/prod_3.png" />
-                        </div>
-                        <div class="p-3">أصابع دجاج</div>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <a href="store.html" class="box-product_ wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">
-                        <div class="img_">
-                            <img src="~/website/imgs/prod_4.png" />
-                        </div>
-                        <div class="p-3">بروستد دجاج</div>
-                    </a>
-                </div>
+            <div class="row" id="productsByCategoryContainer">
+                @* @foreach (var product in Model)
+                {
+                    <div class="col-lg-3 col-md-6" >
+                        <a  class="box-product_ wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">
+                            <div class="img_">
+                                <img src="@product.Image" />
+                            </div>
+                            <div class="p-3">@product.NameAr</div>
+                        </a>
+                    </div>
+                }     *@
+                @await Html.PartialAsync("_ProductListByCategoryPartial", Model)
             </div>
         </div>
     </div>
 </div>
+@section Scripts{
+    <script>
+        function GetProductbyCategory(categoryId){
+            debugger
+            var categoryId = categoryId;
+            $.ajax({
+                url: "/Intro/GetProductbyCategory",
+                type: "POST",
+                data: {
+                    categoryId: categoryId
+                },
+                success: function (result) {
+                    $('#productsByCategoryContainer').html(result);
+                },
+                failure: function (info) {
+
+                }
+            });
+        }
+    </script>
+}

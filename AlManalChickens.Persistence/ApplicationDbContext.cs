@@ -36,6 +36,7 @@ namespace AlManalChickens.Persistence
         public DbSet<Region> Regions { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<PartnersSuccess> PartnersSuccesses { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

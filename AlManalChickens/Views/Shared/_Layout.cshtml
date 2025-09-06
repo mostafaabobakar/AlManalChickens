@@ -155,6 +155,24 @@
                                 </a>
                             </li>
                         }
+                        @if (User.IsInRole(Roles.Admin.ToString()) || User.IsInRole(Roles.Category.ToString()))
+                        {
+                            <li>
+                                <a class="nav-link" asp-area="" asp-controller="Category" asp-action="Index">
+                                    <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                                    الاقسام
+                                </a>
+                            </li>
+                        }
+                        @if (User.IsInRole(Roles.Admin.ToString()) || User.IsInRole(Roles.Products.ToString()))
+                        {
+                            <li>
+                                <a class="nav-link" asp-area="" asp-controller="Products" asp-action="Index">
+                                    <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                                    المنتجات
+                                </a>
+                            </li>
+                        }
                         @if (User.IsInRole(Roles.Admin.ToString()) || User.IsInRole(Roles.Copon.ToString()))
                         {
                             <li>
