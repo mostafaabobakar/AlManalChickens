@@ -1,4 +1,5 @@
 ﻿using AlManalChickens.Services.DashBoard.Contract.CategoryInterfaces;
+using AlManalChickens.Services.DashBoard.Contract.PartnersSuccessInterfaces;
 using AlManalChickens.Services.DashBoard.Contract.ProductsInterfaces;
 using AlManalChickens.Services.DashBoard.Contract.SliderInterfaces;
 using AlManalChickens.Services.DashBoard.Implementation.SliderImplementaion;
@@ -12,12 +13,13 @@ namespace AlManalChickens.Controllers.Website
         private readonly ISliderServices _sliderServices;
         private readonly ICategoryServices _categoryServices;
         private readonly IProductServices _productServices;
-
-        public IntroController(ISliderServices sliderServices, ICategoryServices categoryServices, IProductServices productServices)
+        private readonly IPartnersSuccessServices _partnersSuccessServices;
+        public IntroController(ISliderServices sliderServices, ICategoryServices categoryServices, IProductServices productServices, IPartnersSuccessServices partnersSuccessServices)
         {
             _sliderServices = sliderServices;
             _categoryServices = categoryServices;
             _productServices = productServices;
+            _partnersSuccessServices = partnersSuccessServices;
         }
 
         public async Task<IActionResult> Index()
@@ -39,7 +41,8 @@ namespace AlManalChickens.Controllers.Website
         }
         public async Task<IActionResult> PartnersSuccess()
         {
-            return View();
+            var partnersSuccess = await _partnersSuccessServices.GetActivePartnersSuccess();
+            return View(partnersSuccess);
         }
         public async Task<IActionResult> Products()
         {

@@ -14,7 +14,7 @@ namespace AlManalChickens.Services.DashBoard.Contract.PartnersSuccessInterfaces
         Task<bool> CreatePartnersSuccess(CreatePartnerSuccess model);
         Task<GetPartnersSuccessById> GetPartnersSuccessById(int id);
         Task<bool> UpdatePartnersSuccess(UpdatePartnersSuccess model);
-        Task<PartnersSuccessDto> GetActivePartnersSuccess();
+        Task<List<PartnersSuccessDto>> GetActivePartnersSuccess();
         Task<bool> ChangeStatus(int id);
         Task<bool> DeletePartner(int id);
 

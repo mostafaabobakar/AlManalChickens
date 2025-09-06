@@ -71,7 +71,7 @@ namespace AlManalChickens.Services.DashBoard.Implementation.PartnersSuccessImple
             await _context.SaveChangesAsync();
             return true;
         }
-        public async Task<PartnersSuccessDto> GetActivePartnersSuccess()
+        public async Task<List<PartnersSuccessDto>> GetActivePartnersSuccess()
         {
             var activePartnersSuccess = await _context.PartnersSuccesses
                 .Where(c => c.IsActive)
@@ -80,7 +80,7 @@ namespace AlManalChickens.Services.DashBoard.Implementation.PartnersSuccessImple
                     Id = c.Id,
                     Name = c.Name,
                     Image = DefaultPath.DomainUrl + c.Image
-                }).FirstOrDefaultAsync();
+                }).ToListAsync();
             return activePartnersSuccess;
         }
         public async Task<bool> ChangeStatus(int id)

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<AlManalChickens.Services.DTO.partnersSuccess.PartnersSuccessDto>
+@{
     Layout = "~/Views/Shared/_LayoutWebsite.cshtml";
 }
 <div class="paner_">
@@ -12,7 +13,18 @@
     <div class="container">
 
         <div class="row">
-            <div class="col-md-4 col-6">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4 col-6">
+                    <div class="box-partners wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">
+                        <img src="@item.Image">
+                    </div>
+                    <div class="partner-name text-center mt-2">
+                        @item.Name
+                    </div>
+                </div>
+            }
+            @* <div class="col-md-4 col-6">
                 <div class="box-partners wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">
                     <img src="~/Website/imgs/alshrkat_1.png">
                 </div>
@@ -51,7 +63,7 @@
                 <div class="box-partners wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">
                     <img src="~/Website/imgs/alshrkat_8.jpg">
                 </div>
-            </div>
+            </div> *@
         </div>
     </div>
 </div>
