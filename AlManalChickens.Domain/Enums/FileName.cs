@@ -14,5 +14,6 @@
         Slider = 12,
         Advertisment = 13,
         Products=14,
+        PartnersSuccess=15,
     }
 }

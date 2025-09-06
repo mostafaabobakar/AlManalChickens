@@ -173,6 +173,15 @@
                                 </a>
                             </li>
                         }
+                        @if (User.IsInRole(Roles.Admin.ToString()) || User.IsInRole(Roles.PartnersSuccess.ToString()))
+                        {
+                            <li>
+                                <a class="nav-link" asp-area="" asp-controller="PartnersSuccess" asp-action="Index">
+                                    <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                                    شركاء النجاح
+                                </a>
+                            </li>
+                        }
                         @if (User.IsInRole(Roles.Admin.ToString()) || User.IsInRole(Roles.Copon.ToString()))
                         {
                             <li>
