@@ -1,6 +1,7 @@
 ﻿using AlManalChickens.Domain.ViewModel.ContactUs;
 using AlManalChickens.Persistence;
 using AlManalChickens.Services.DashBoard.Contract.ContactUsInterfaces;
+using AlManalChickens.Services.DTO.ContactusDto;
 using Microsoft.EntityFrameworkCore;
 
 namespace AlManalChickens.Services.DashBoard.Implementation.ContactUsImplementation
@@ -24,6 +25,22 @@ namespace AlManalChickens.Services.DashBoard.Implementation.ContactUsImplementat
                 Email = c.Email,
                 Date = c.Date.ToString("dd-MM-yyyy")
             }).ToListAsync();
+        }
+        public async Task<bool> CreateContactus(CreateContacusDto model)
+        {
+            await _context.ContactUs.AddAsync(new Domain.Entities.SettingTables.ContactUs
+            {
+                UserName = model.userName,
+                Email = model.email,
+                PhoneNumber = model.phoneNumber,
+                Msg = model.message,
+                Region = model.region,
+                Type = model.contactusType,
+                Gender = model.gender,
+                Date = DateTime.Now,
+            });
+            await _context.SaveChangesAsync();
+            return true;
         }
 
         public async Task<bool> DeleteContactUs(int? id)

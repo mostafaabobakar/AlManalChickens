@@ -15,5 +15,6 @@
         Advertisment = 13,
         Products=14,
         PartnersSuccess=15,
+        News=16,
     }
 }

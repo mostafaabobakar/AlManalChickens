@@ -1,8 +1,10 @@
 ﻿using AlManalChickens.Services.DashBoard.Contract.CategoryInterfaces;
+using AlManalChickens.Services.DashBoard.Contract.ContactUsInterfaces;
 using AlManalChickens.Services.DashBoard.Contract.PartnersSuccessInterfaces;
 using AlManalChickens.Services.DashBoard.Contract.ProductsInterfaces;
 using AlManalChickens.Services.DashBoard.Contract.SliderInterfaces;
 using AlManalChickens.Services.DashBoard.Implementation.SliderImplementaion;
+using AlManalChickens.Services.DTO.ContactusDto;
 using Microsoft.AspNetCore.Mvc;
 using NPOI.HSSF.Record.Chart;
 
@@ -14,12 +16,14 @@ namespace AlManalChickens.Controllers.Website
         private readonly ICategoryServices _categoryServices;
         private readonly IProductServices _productServices;
         private readonly IPartnersSuccessServices _partnersSuccessServices;
-        public IntroController(ISliderServices sliderServices, ICategoryServices categoryServices, IProductServices productServices, IPartnersSuccessServices partnersSuccessServices)
+        private readonly IContactUsServices _contactUsServices;
+        public IntroController(ISliderServices sliderServices, ICategoryServices categoryServices, IProductServices productServices, IPartnersSuccessServices partnersSuccessServices, IContactUsServices contactUsServices)
         {
             _sliderServices = sliderServices;
             _categoryServices = categoryServices;
             _productServices = productServices;
             _partnersSuccessServices = partnersSuccessServices;
+            _contactUsServices = contactUsServices;
         }
 
         public async Task<IActionResult> Index()
@@ -34,6 +38,12 @@ namespace AlManalChickens.Controllers.Website
         public async Task<IActionResult> ContactUs()
         {
             return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> ContactUs(CreateContacusDto model)
+        {
+            var result=await _contactUsServices.CreateContactus(model);
+            return RedirectToAction(nameof(ContactUs));
         }
         public async Task<IActionResult> Production()
         {

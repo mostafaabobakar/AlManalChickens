@@ -1,4 +1,7 @@
-﻿@{
+﻿@using AlManalChickens.Domain.Enums;
+@model AlManalChickens.Services.DTO.ContactusDto.CreateContacusDto
+
+@{
     Layout = "~/Views/Shared/_LayoutWebsite.cshtml";
 }
 <div class="paner_">
@@ -53,66 +56,67 @@
                 <div class="col-lg-6">
                     <div>
                         <h3 class="f-b main-color mb-3 text-center wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s ">إملأ النموذج</h3>
-                        <form class="form-content m-0 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">
+                        <form asp-action="ContactUs" method="post" class="form-content m-0 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">
                             <div class="form-group">
                                 <label class="text-center d-block">النوع</label>
                                 <div class="Types_Complaint d-flex justify-content-center align-items-center gap-2">
                                     <div>
-                                        <input type="radio" name="type_" value="Complaint">
+                                        <input type="radio" asp-for="contactusType" value="@((int)ContactusType.complaint)" checked>
                                         <aside>شكوى</aside>
                                         <span></span>
                                     </div>
                                     <div>
-                                        <input type="radio" name="type_" value="Suggestion">
+                                        <input type="radio" asp-for="contactusType" value="@((int)ContactusType.Suggest)">
                                         <aside>اقتراح</aside>
                                         <span></span>
                                     </div>
-                                    <div>
-                                        <input type="radio" name="type_" value="Investigation">
-                                        <aside>تحقيق</aside>
-                                        <span></span>
-                                    </div>
+ 
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label>الاسم</label>
-                                        <input type="text" class="form-control" placeholder="الاسم الكامل">
+                                        <input asp-for="userName" class="form-control" placeholder="الاسم الكامل">
+                                        <span asp-validation-for="userName" class="text-danger"></span>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label>البريد الإلكتروني</label>
-                                        <input type="email" class="form-control" placeholder="برجاء إدخال البريد الإلكتروني">
+                                        <input asp-for="email" class="form-control"  placeholder="برجاء إدخال البريد الإلكتروني">
+                                        <span asp-validation-for="email" class="text-danger"></span>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label>الجنس</label>
-                                        <select class="form-control select_2">
+                                        <select class="form-control select_2" asp-for="gender">
                                             <option selected disabled hidden>برجاء اختيار الجنس</option>
-                                            <option>ذكر</option>
-                                            <option>انثى</option>
+                                            <option  value="@((int)GenderType.male)">ذكر</option>
+                                            <option value="@((int)GenderType.female)">انثى</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label>المنطقة</label>
-                                        <input type="text" class="form-control" placeholder="برجاء إدخال المنطقة">
+                                        <input asp-for="region" class="form-control" placeholder="برجاء إدخال المنطقة">
+                                        <span asp-validation-for="region" class="text-danger"></span>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label>رقم الجوال</label>
-                                        <input type="text" class="form-control" placeholder="برجاء إدخال رقم الجوال">
+                                        <input asp-for="phoneNumber" class="form-control" placeholder="برجاء إدخال رقم الجوال">
+                                        <span asp-validation-for="phoneNumber" class="text-danger"></span>
                                     </div>
                                 </div>
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         <label>رسالة</label>
-                                        <textarea class="form-control" placeholder="برجاء إدخال الرسالة"></textarea>
+                                        <textarea class="form-control" asp-for="message" placeholder="برجاء إدخال الرسالة"></textarea>
+                                        <span asp-validation-for="message" class="text-danger"></span>
                                     </div>
                                 </div>
                             </div>
@@ -130,3 +134,7 @@
         </div>
     </div>
 </div>
+@section scripts{
+    <script>
+    </script>
+}
